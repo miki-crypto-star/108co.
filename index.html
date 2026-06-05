@@ -137,7 +137,7 @@ h2{
   gap:90px;
 }
 .app{
-  min-height:560px;
+  min-height:590px;
   border-radius:46px;
   overflow:hidden;
   background:
@@ -145,7 +145,7 @@ h2{
     linear-gradient(135deg,#1c1c1e,#070707 62%);
   border:1px solid rgba(255,255,255,.1);
   display:grid;
-  grid-template-columns:1fr 1fr;
+  grid-template-columns:1.1fr .9fr;
   align-items:center;
   padding:56px;
   box-shadow:0 40px 100px rgba(0,0,0,.55);
@@ -163,9 +163,9 @@ h2{
 }
 .app-copy p{
   color:#b7b7bb;
-  font-size:19px;
-  line-height:1.55;
-  max-width:460px;
+  font-size:18px;
+  line-height:1.65;
+  max-width:530px;
 }
 .app-tag{
   display:inline-block;
@@ -178,11 +178,27 @@ h2{
   font-size:12px;
   font-weight:800;
 }
+.features{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin-top:22px;
+  max-width:560px;
+}
+.features span{
+  background:rgba(52,199,89,.12);
+  color:#34c759;
+  border:1px solid rgba(52,199,89,.25);
+  padding:7px 11px;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:700;
+}
 .app-actions{
   display:flex;
   gap:12px;
   flex-wrap:wrap;
-  margin-top:28px;
+  margin-top:30px;
 }
 .device{
   justify-self:center;
@@ -373,12 +389,13 @@ iframe{
 
 <section class="hero" id="top">
   <div>
-    <div class="kicker">Built Apps</div>
+    <div class="kicker">App Portfolio</div>
     <h1>108co.</h1>
-    <p>Simple web tools for daily operations.</p>
+    <p>業務を少し軽くする、現場向けWebアプリ紹介サイト。</p>
     <div class="hero-actions">
       <a class="btn primary" href="#apps">View Apps</a>
-      <a class="btn" href="#contact">Contact</a>
+      <button class="btn" onclick="openQR()">QR表示</button>
+      <a class="btn" href="https://line.me/ti/p/VI-WO4cQZg" target="_blank">LINEで問い合わせる</a>
     </div>
   </div>
 </section>
@@ -396,7 +413,19 @@ iframe{
       <div class="app-copy">
         <span class="app-tag">Attendance</span>
         <h3>Smart Kintai</h3>
-        <p>GPS打刻、勤怠確認、管理者画面、CSV集計を想定した勤怠管理アプリ。</p>
+        <p>
+          出勤・退勤打刻、GPS位置記録、備考入力に対応した現場向け勤怠管理システム。
+          管理者は勤怠状況を確認でき、CSV出力による集計業務の効率化をサポートします。
+          外出先や現場での打刻記録にも対応できる構成を想定しています。
+        </p>
+        <div class="features">
+          <span>GPS打刻</span>
+          <span>出退勤管理</span>
+          <span>備考入力</span>
+          <span>勤怠集計</span>
+          <span>CSV出力</span>
+          <span>管理者画面</span>
+        </div>
         <div class="app-actions">
           <button class="btn" onclick="preview('https://miki-crypto-star.github.io/smart-kintai/admin.html?company=demo')">Preview</button>
           <a class="btn primary" target="_blank" href="https://miki-crypto-star.github.io/smart-kintai/admin.html?company=demo">Open App</a>
@@ -418,7 +447,19 @@ iframe{
       <div class="app-copy">
         <span class="app-tag">Order</span>
         <h3>SmartOrder</h3>
-        <p>イートイン・テイクアウト対応。リアルタイム注文と会計集計を支援する注文管理アプリ。</p>
+        <p>
+          テイクアウト・イートインに対応した注文管理システム。
+          お客様はQRコードから注文し、キッチン画面へリアルタイムで反映。
+          提供状況や会計状況を管理し、注文ミスや伝達漏れの削減を目指します。
+        </p>
+        <div class="features">
+          <span>QR注文</span>
+          <span>イートイン</span>
+          <span>テイクアウト</span>
+          <span>リアルタイム表示</span>
+          <span>提供管理</span>
+          <span>売上集計</span>
+        </div>
         <div class="app-actions">
           <button class="btn" onclick="preview('https://miki-crypto-star.github.io/SmartOrder/')">Preview</button>
           <a class="btn primary" target="_blank" href="https://miki-crypto-star.github.io/SmartOrder/">Open App</a>
@@ -440,7 +481,18 @@ iframe{
       <div class="app-copy">
         <span class="app-tag">Support</span>
         <h3>Order Support</h3>
-        <p>店舗オペレーションや注文連携を支援するWebアプリ。</p>
+        <p>
+          飲食店向けのオーダー連携・店舗支援システム。
+          注文内容の共有、進行状況の確認、スタッフ間の情報整理を行い、
+          店舗オペレーションの効率化と伝達ミスの削減をサポートします。
+        </p>
+        <div class="features">
+          <span>注文共有</span>
+          <span>状態管理</span>
+          <span>リアルタイム更新</span>
+          <span>店舗運営支援</span>
+          <span>伝達ミス削減</span>
+        </div>
         <div class="app-actions">
           <button class="btn" onclick="preview('https://bpakishizawa-sketch.github.io/izakaya-relay/login')">Preview</button>
           <a class="btn primary" target="_blank" href="https://bpakishizawa-sketch.github.io/izakaya-relay/login">Open App</a>
@@ -462,7 +514,19 @@ iframe{
       <div class="app-copy">
         <span class="app-tag">Coming Soon</span>
         <h3>Dispatch GPS</h3>
-        <p>車両位置、地点管理、配車補助を想定したGPS管理アプリ。</p>
+        <p>
+          車両位置をリアルタイムで管理するGPS配車支援システム。
+          現場・待機場所・車両位置を地図上で一元管理し、
+          配車業務や現場確認の効率化を目的として開発中です。
+        </p>
+        <div class="features">
+          <span>リアルタイムGPS</span>
+          <span>車両管理</span>
+          <span>現場管理</span>
+          <span>待機場所管理</span>
+          <span>地図表示</span>
+          <span>Buddycom連携予定</span>
+        </div>
         <div class="app-actions">
           <button class="btn" disabled>Preview</button>
           <button class="btn primary" disabled>Open App</button>
@@ -493,15 +557,15 @@ iframe{
   <div class="services-grid">
     <div class="service">
       <h3>Web App</h3>
-      <p>業務用Webアプリの設計・試作。</p>
+      <p>業務用Webアプリの設計・試作。勤怠、注文、管理画面など、目的に合わせて構成します。</p>
     </div>
     <div class="service">
       <h3>Operation Design</h3>
-      <p>現場や店舗の流れに合わせた運用設計。</p>
+      <p>現場や店舗の流れに合わせて、使いやすい入力画面や管理画面を設計します。</p>
     </div>
     <div class="service">
       <h3>Small DX</h3>
-      <p>紙、電話、手入力を減らす小規模DX。</p>
+      <p>紙、電話、手入力、伝達ミスを減らすための小規模DXをサポートします。</p>
     </div>
   </div>
 </section>
@@ -515,8 +579,8 @@ iframe{
   <div class="contact-panel">
     <p>アプリの確認、相談、制作依頼はLINEからお問い合わせください。</p>
     <div class="contact-actions">
-      <button class="btn" onclick="openQR()">View QR</button>
-      <a class="btn primary" href="https://line.me/R/ti/p/~miki46p9" target="_blank">Contact on LINE</a>
+      <button class="btn" onclick="openQR()">QR表示</button>
+      <a class="btn primary" href="https://line.me/ti/p/VI-WO4cQZg" target="_blank">LINEで問い合わせる</a>
     </div>
   </div>
 </section>
@@ -524,8 +588,8 @@ iframe{
 <section class="about" id="about">
   <div class="about-box">
     <strong>About 108co.</strong><br>
-    108co. builds simple web tools for daily operations.
-    This site introduces practical apps for attendance, ordering, store operations, and dispatch support.
+    108co. は、日々の業務で使いやすいWebアプリを紹介するポートフォリオサイトです。
+    勤怠管理、注文管理、店舗運営支援、GPS配車管理など、現場や店舗で実際に使うことを想定した小さな業務ツールを中心に掲載しています。
   </div>
 </section>
 
@@ -544,7 +608,7 @@ iframe{
     <h3>LINE QR</h3>
     <img src="./line-qr.jpg" alt="LINE QR">
     <br>
-    <a class="btn primary" href="https://line.me/R/ti/p/~miki46p9" target="_blank">Contact on LINE</a>
+    <a class="btn primary" href="https://line.me/ti/p/VI-WO4cQZg" target="_blank">LINEで問い合わせる</a>
   </div>
 </div>
 
