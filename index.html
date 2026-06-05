@@ -1,189 +1,566 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>108co. | Apps</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>108co. | Built Apps</title>
+
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;background:#050505;color:#fff}
+html{scroll-behavior:smooth}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue",Arial,sans-serif;
+  background:#000;
+  color:#f5f5f7;
+}
 a{text-decoration:none;color:inherit}
-header{position:fixed;top:0;width:100%;z-index:10;background:rgba(0,0,0,.65);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.08)}
-nav{max-width:1100px;margin:auto;padding:16px 22px;display:flex;justify-content:space-between;align-items:center}
-.logo{font-weight:800;font-size:20px;letter-spacing:-.04em}
-nav div:last-child{display:flex;gap:18px;font-size:14px;color:#aaa}
-section{max-width:1100px;margin:auto;padding:110px 22px}
-.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center}
-.badge{display:inline-block;color:#34c759;border:1px solid rgba(52,199,89,.5);background:rgba(52,199,89,.08);padding:8px 16px;border-radius:999px;margin-bottom:22px}
-h1{font-size:clamp(56px,10vw,120px);line-height:.9;letter-spacing:-.075em;margin-bottom:28px}
-.hero p,.lead{color:#bbb;font-size:clamp(18px,2.5vw,27px);max-width:760px;margin:0 auto 34px}
-.btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-.btn{border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.08);padding:13px 22px;border-radius:999px;font-weight:700;cursor:pointer}
-.btn.green{background:#34c759;color:#000;border:none}
-.title{font-size:clamp(38px,6vw,70px);letter-spacing:-.065em;margin-bottom:12px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px;margin-top:38px}
-.card{background:linear-gradient(180deg,#181818,#080808);border:1px solid rgba(255,255,255,.09);border-radius:32px;padding:28px;min-height:310px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 30px 70px rgba(0,0,0,.45)}
-.card h3{font-size:28px;letter-spacing:-.045em;margin-bottom:10px}
-.card p{color:#aaa;font-size:15px}
-.tag{display:inline-block;color:#34c759;background:rgba(52,199,89,.1);padding:6px 12px;border-radius:999px;font-size:12px;margin-bottom:18px}
-.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
-.small{padding:10px 15px;border-radius:999px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.08);cursor:pointer}
-.small.white{background:#fff;color:#000}
-.box{background:linear-gradient(135deg,#151515,#070707);border:1px solid rgba(255,255,255,.09);border-radius:34px;padding:34px}
-.box p{color:#bbb;font-size:17px;max-width:760px}
-footer{text-align:center;color:#666;padding:45px}
-.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.84);z-index:99;align-items:center;justify-content:center;padding:20px}
+button{font-family:inherit}
+
+header{
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:50;
+  background:rgba(0,0,0,.65);
+  backdrop-filter:blur(24px);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.nav{
+  max-width:1180px;
+  margin:auto;
+  padding:14px 22px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.logo{
+  font-size:19px;
+  font-weight:700;
+  letter-spacing:-.04em;
+}
+.links{
+  display:flex;
+  gap:24px;
+  font-size:13px;
+  color:#aaa;
+}
+.links a:hover{color:#fff}
+
+section{
+  max-width:1180px;
+  margin:auto;
+  padding:120px 22px;
+}
+
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+.kicker{
+  color:#34c759;
+  font-size:15px;
+  font-weight:700;
+  margin-bottom:18px;
+}
+h1{
+  font-size:clamp(64px,12vw,150px);
+  line-height:.88;
+  letter-spacing:-.085em;
+  margin-bottom:28px;
+}
+.hero p{
+  max-width:760px;
+  margin:auto;
+  color:#b5b5b8;
+  font-size:clamp(20px,3vw,32px);
+  line-height:1.25;
+}
+.hero-actions{
+  margin-top:40px;
+  display:flex;
+  justify-content:center;
+  gap:14px;
+  flex-wrap:wrap;
+}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:46px;
+  padding:0 22px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.16);
+  background:rgba(255,255,255,.08);
+  color:#fff;
+  font-size:15px;
+  font-weight:700;
+  cursor:pointer;
+  transition:.18s ease;
+}
+.btn:hover{
+  transform:translateY(-2px);
+  background:rgba(255,255,255,.14);
+}
+.btn.primary{
+  background:#34c759;
+  color:#000;
+  border:none;
+}
+
+.section-head{
+  margin-bottom:56px;
+}
+.section-label{
+  color:#34c759;
+  font-size:14px;
+  font-weight:800;
+  margin-bottom:10px;
+}
+h2{
+  font-size:clamp(44px,7vw,88px);
+  line-height:.95;
+  letter-spacing:-.075em;
+  margin-bottom:18px;
+}
+.lead{
+  color:#a8a8ad;
+  font-size:21px;
+  max-width:720px;
+  line-height:1.45;
+}
+
+.apps{
+  display:grid;
+  gap:90px;
+}
+.app{
+  min-height:560px;
+  border-radius:46px;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 70% 25%,rgba(52,199,89,.22),transparent 32%),
+    linear-gradient(135deg,#1c1c1e,#070707 62%);
+  border:1px solid rgba(255,255,255,.1);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  padding:56px;
+  box-shadow:0 40px 100px rgba(0,0,0,.55);
+}
+.app:nth-child(even){
+  background:
+    radial-gradient(circle at 25% 20%,rgba(255,255,255,.13),transparent 34%),
+    linear-gradient(135deg,#090909,#1c1c1e);
+}
+.app-copy h3{
+  font-size:clamp(40px,5vw,72px);
+  line-height:.95;
+  letter-spacing:-.07em;
+  margin-bottom:18px;
+}
+.app-copy p{
+  color:#b7b7bb;
+  font-size:19px;
+  line-height:1.55;
+  max-width:460px;
+}
+.app-tag{
+  display:inline-block;
+  margin-bottom:18px;
+  color:#34c759;
+  background:rgba(52,199,89,.11);
+  border:1px solid rgba(52,199,89,.28);
+  padding:7px 13px;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:800;
+}
+.app-actions{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:28px;
+}
+.device{
+  justify-self:center;
+  width:min(330px,100%);
+  aspect-ratio:9/16;
+  border-radius:42px;
+  padding:13px;
+  background:linear-gradient(145deg,#3a3a3c,#0b0b0c);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.18),0 35px 90px rgba(0,0,0,.65);
+}
+.screen{
+  width:100%;
+  height:100%;
+  border-radius:32px;
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.18),rgba(255,255,255,.02)),
+    #101010;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  padding:26px;
+}
+.screen-title{
+  font-size:27px;
+  font-weight:800;
+  letter-spacing:-.05em;
+}
+.screen-lines{
+  display:grid;
+  gap:12px;
+}
+.line{
+  height:13px;
+  border-radius:999px;
+  background:rgba(255,255,255,.18);
+}
+.line.green{background:#34c759}
+.line.short{width:62%}
+.line.mid{width:82%}
+
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+}
+.service{
+  min-height:250px;
+  border-radius:34px;
+  padding:30px;
+  background:#111113;
+  border:1px solid rgba(255,255,255,.09);
+}
+.service h3{
+  font-size:28px;
+  letter-spacing:-.05em;
+  margin-bottom:14px;
+}
+.service p{
+  color:#aaa;
+  line-height:1.55;
+}
+
+.contact-panel{
+  border-radius:46px;
+  padding:58px;
+  background:
+    radial-gradient(circle at 80% 15%,rgba(52,199,89,.24),transparent 30%),
+    linear-gradient(135deg,#19191b,#050505);
+  border:1px solid rgba(255,255,255,.1);
+}
+.contact-panel p{
+  color:#b7b7bb;
+  font-size:21px;
+  line-height:1.5;
+  max-width:650px;
+}
+.contact-actions{
+  margin-top:34px;
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+}
+
+.about{
+  padding-top:70px;
+}
+.about-box{
+  border-top:1px solid rgba(255,255,255,.12);
+  padding-top:34px;
+  color:#8e8e93;
+  font-size:14px;
+  line-height:1.7;
+  max-width:760px;
+}
+
+footer{
+  color:#666;
+  text-align:center;
+  padding:36px 20px 60px;
+  font-size:13px;
+}
+
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:100;
+  background:rgba(0,0,0,.86);
+  backdrop-filter:blur(14px);
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
 .modal.active{display:flex}
-.modal-content{background:#111;border:1px solid rgba(255,255,255,.12);border-radius:28px;padding:24px;max-width:900px;width:100%;position:relative}
-.close{position:absolute;right:18px;top:14px;font-size:28px;cursor:pointer;color:#aaa}
-iframe{width:100%;height:70vh;border:0;border-radius:18px;background:#fff}
-.qr{text-align:center}
-.qr img{max-width:320px;width:100%;border-radius:20px;background:#fff}
-@media(max-width:700px){nav div:last-child{display:none}.card{min-height:260px}}
+.modal-box{
+  width:min(980px,100%);
+  max-height:90vh;
+  overflow:auto;
+  background:#111;
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:34px;
+  padding:24px;
+  position:relative;
+}
+.close{
+  position:absolute;
+  top:16px;
+  right:20px;
+  border:none;
+  background:none;
+  color:#aaa;
+  font-size:32px;
+  cursor:pointer;
+}
+iframe{
+  width:100%;
+  height:72vh;
+  border:0;
+  border-radius:22px;
+  background:#fff;
+}
+.qr-box{
+  text-align:center;
+  padding:42px 24px;
+}
+.qr-box h3{
+  font-size:34px;
+  letter-spacing:-.05em;
+  margin-bottom:22px;
+}
+.qr-box img{
+  width:min(320px,100%);
+  border-radius:26px;
+  background:#fff;
+  padding:10px;
+}
+.qr-box .btn{margin-top:24px}
+
+@media(max-width:850px){
+  .links{display:none}
+  section{padding:90px 18px}
+  .app{
+    grid-template-columns:1fr;
+    gap:42px;
+    padding:34px;
+    min-height:auto;
+  }
+  .device{width:min(280px,100%)}
+  .services-grid{grid-template-columns:1fr}
+  .contact-panel{padding:36px}
+}
 </style>
 </head>
+
 <body>
 
 <header>
-<nav>
-  <div class="logo">108co.</div>
-  <div>
-    <a href="#apps">Apps</a>
-    <a href="#services">Services</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
+  <div class="nav">
+    <a class="logo" href="#top">108co.</a>
+    <div class="links">
+      <a href="#apps">Apps</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+      <a href="#about">About</a>
+    </div>
   </div>
-</nav>
 </header>
 
 <section class="hero" id="top">
   <div>
-    <div class="badge">App Portfolio</div>
+    <div class="kicker">Built Apps</div>
     <h1>108co.</h1>
-    <p>現場・店舗・業務を少し軽くするためのWebアプリ紹介サイト。</p>
-    <div class="btns">
-      <a class="btn green" href="#apps">Appsを見る</a>
-      <button class="btn" onclick="openQr()">QR表示</button>
-      <a class="btn" href="https://line.me/R/ti/p/~miki46p9" target="_blank">LINEで問い合わせる</a>
+    <p>Simple web tools for daily operations.</p>
+    <div class="hero-actions">
+      <a class="btn primary" href="#apps">View Apps</a>
+      <a class="btn" href="#contact">Contact</a>
     </div>
   </div>
 </section>
 
 <section id="apps">
-  <h2 class="title">Apps</h2>
-  <p class="lead">作成中・運用想定のWebアプリ。</p>
+  <div class="section-head">
+    <div class="section-label">Apps</div>
+    <h2>Tools that work<br>on the floor.</h2>
+    <p class="lead">勤怠、注文、店舗支援、配車管理。日々の業務に合わせて使えるWebアプリ。</p>
+  </div>
 
-  <div class="grid">
-    <div class="card">
-      <div>
-        <span class="tag">勤怠管理</span>
+  <div class="apps">
+
+    <div class="app">
+      <div class="app-copy">
+        <span class="app-tag">Attendance</span>
         <h3>Smart Kintai</h3>
-        <p>出退勤、GPS打刻、管理者確認、CSV集計を想定した勤怠管理アプリ。</p>
+        <p>GPS打刻、勤怠確認、管理者画面、CSV集計を想定した勤怠管理アプリ。</p>
+        <div class="app-actions">
+          <button class="btn" onclick="preview('https://miki-crypto-star.github.io/smart-kintai/admin.html?company=demo')">Preview</button>
+          <a class="btn primary" target="_blank" href="https://miki-crypto-star.github.io/smart-kintai/admin.html?company=demo">Open App</a>
+        </div>
       </div>
-      <div class="actions">
-        <button class="small" onclick="preview('https://miki-crypto-star.github.io/smart-kintai/admin.html?company=demo')">Preview</button>
-        <a class="small white" target="_blank" href="https://miki-crypto-star.github.io/smart-kintai/admin.html?company=demo">Open App</a>
+      <div class="device">
+        <div class="screen">
+          <div class="screen-title">Smart<br>Kintai</div>
+          <div class="screen-lines">
+            <div class="line green"></div>
+            <div class="line mid"></div>
+            <div class="line short"></div>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="card">
-      <div>
-        <span class="tag">注文管理</span>
+    <div class="app">
+      <div class="app-copy">
+        <span class="app-tag">Order</span>
         <h3>SmartOrder</h3>
-        <p>イートイン・テイクアウト対応のリアルタイム注文管理アプリ。</p>
+        <p>イートイン・テイクアウト対応。リアルタイム注文と会計集計を支援する注文管理アプリ。</p>
+        <div class="app-actions">
+          <button class="btn" onclick="preview('https://miki-crypto-star.github.io/SmartOrder/')">Preview</button>
+          <a class="btn primary" target="_blank" href="https://miki-crypto-star.github.io/SmartOrder/">Open App</a>
+        </div>
       </div>
-      <div class="actions">
-        <button class="small" onclick="preview('https://miki-crypto-star.github.io/SmartOrder/')">Preview</button>
-        <a class="small white" target="_blank" href="https://miki-crypto-star.github.io/SmartOrder/">Open App</a>
+      <div class="device">
+        <div class="screen">
+          <div class="screen-title">Smart<br>Order</div>
+          <div class="screen-lines">
+            <div class="line"></div>
+            <div class="line green"></div>
+            <div class="line mid"></div>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="card">
-      <div>
-        <span class="tag">店舗支援</span>
+    <div class="app">
+      <div class="app-copy">
+        <span class="app-tag">Support</span>
         <h3>Order Support</h3>
-        <p>注文・連携・店舗オペレーション支援用のWebアプリ。</p>
+        <p>店舗オペレーションや注文連携を支援するWebアプリ。</p>
+        <div class="app-actions">
+          <button class="btn" onclick="preview('https://bpakishizawa-sketch.github.io/izakaya-relay/login')">Preview</button>
+          <a class="btn primary" target="_blank" href="https://bpakishizawa-sketch.github.io/izakaya-relay/login">Open App</a>
+        </div>
       </div>
-      <div class="actions">
-        <button class="small" onclick="preview('https://bpakishizawa-sketch.github.io/izakaya-relay/login')">Preview</button>
-        <a class="small white" target="_blank" href="https://bpakishizawa-sketch.github.io/izakaya-relay/login">Open App</a>
+      <div class="device">
+        <div class="screen">
+          <div class="screen-title">Order<br>Support</div>
+          <div class="screen-lines">
+            <div class="line green"></div>
+            <div class="line"></div>
+            <div class="line short"></div>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="card">
-      <div>
-        <span class="tag">Coming Soon</span>
+    <div class="app">
+      <div class="app-copy">
+        <span class="app-tag">Coming Soon</span>
         <h3>Dispatch GPS</h3>
         <p>車両位置、地点管理、配車補助を想定したGPS管理アプリ。</p>
+        <div class="app-actions">
+          <button class="btn" disabled>Preview</button>
+          <button class="btn primary" disabled>Open App</button>
+        </div>
       </div>
-      <div class="actions">
-        <button class="small" disabled>Preview</button>
-        <button class="small white" disabled>Open App</button>
+      <div class="device">
+        <div class="screen">
+          <div class="screen-title">Dispatch<br>GPS</div>
+          <div class="screen-lines">
+            <div class="line"></div>
+            <div class="line mid"></div>
+            <div class="line green short"></div>
+          </div>
+        </div>
       </div>
     </div>
+
   </div>
 </section>
 
 <section id="services">
-  <h2 class="title">Services</h2>
-  <div class="grid">
-    <div class="card"><h3>Web App</h3><p>業務用Webアプリの設計・試作。</p></div>
-    <div class="card"><h3>Operation Design</h3><p>現場や店舗に合わせた運用設計。</p></div>
-    <div class="card"><h3>Small DX</h3><p>紙・電話・手入力を減らす小規模DX。</p></div>
+  <div class="section-head">
+    <div class="section-label">Services</div>
+    <h2>Small Business<br>Tools.</h2>
+    <p class="lead">大きなシステムではなく、現場に合わせた小さく使える仕組みを作ります。</p>
   </div>
-</section>
 
-<section id="about">
-  <h2 class="title">About</h2>
-  <div class="box">
-    <p>108co. は、現場や店舗で使いやすいWebアプリを形にするためのポートフォリオサイトです。大きなシステムではなく、日々の作業を少し減らす実用的なアプリを中心に紹介しています。</p>
+  <div class="services-grid">
+    <div class="service">
+      <h3>Web App</h3>
+      <p>業務用Webアプリの設計・試作。</p>
+    </div>
+    <div class="service">
+      <h3>Operation Design</h3>
+      <p>現場や店舗の流れに合わせた運用設計。</p>
+    </div>
+    <div class="service">
+      <h3>Small DX</h3>
+      <p>紙、電話、手入力を減らす小規模DX。</p>
+    </div>
   </div>
 </section>
 
 <section id="contact">
-  <h2 class="title">Contact</h2>
-  <div class="box">
-    <p>アプリの相談・確認はLINEからお問い合わせください。</p>
-    <br>
-    <div class="btns">
-      <button class="btn" onclick="openQr()">QR表示</button>
-      <a class="btn green" href="https://line.me/R/ti/p/~miki46p9" target="_blank">LINEで問い合わせる</a>
+  <div class="section-head">
+    <div class="section-label">Contact</div>
+    <h2>Let’s talk.</h2>
+  </div>
+
+  <div class="contact-panel">
+    <p>アプリの確認、相談、制作依頼はLINEからお問い合わせください。</p>
+    <div class="contact-actions">
+      <button class="btn" onclick="openQR()">View QR</button>
+      <a class="btn primary" href="https://line.me/R/ti/p/~miki46p9" target="_blank">Contact on LINE</a>
     </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="about-box">
+    <strong>About 108co.</strong><br>
+    108co. builds simple web tools for daily operations.
+    This site introduces practical apps for attendance, ordering, store operations, and dispatch support.
   </div>
 </section>
 
 <footer>© 108co.</footer>
 
 <div class="modal" id="previewModal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal()">×</span>
+  <div class="modal-box">
+    <button class="close" onclick="closePreview()">×</button>
     <iframe id="previewFrame"></iframe>
   </div>
 </div>
 
 <div class="modal" id="qrModal">
-  <div class="modal-content qr">
-    <span class="close" onclick="closeQr()">×</span>
-    <h2 style="margin-bottom:18px;">LINE QR</h2>
+  <div class="modal-box qr-box">
+    <button class="close" onclick="closeQR()">×</button>
+    <h3>LINE QR</h3>
     <img src="./line-qr.jpg" alt="LINE QR">
-    <br><br>
-    <a class="btn green" href="https://line.me/R/ti/p/~miki46p9" target="_blank">LINEで問い合わせる</a>
+    <br>
+    <a class="btn primary" href="https://line.me/R/ti/p/~miki46p9" target="_blank">Contact on LINE</a>
   </div>
 </div>
 
 <script>
 function preview(url){
-  document.getElementById("previewFrame").src = url;
+  document.getElementById("previewFrame").src=url;
   document.getElementById("previewModal").classList.add("active");
 }
-function closeModal(){
+function closePreview(){
   document.getElementById("previewModal").classList.remove("active");
-  document.getElementById("previewFrame").src = "";
+  document.getElementById("previewFrame").src="";
 }
-function openQr(){
+function openQR(){
   document.getElementById("qrModal").classList.add("active");
 }
-function closeQr(){
+function closeQR(){
   document.getElementById("qrModal").classList.remove("active");
 }
 </script>
