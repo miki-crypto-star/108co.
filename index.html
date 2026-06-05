@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>108co. | ホームページ制作・業務改善Webアプリ</title>
+  <title>108co. | Webサイト制作・業務改善Webアプリ</title>
 
   <style>
     :root{
@@ -223,14 +223,8 @@
       font-size:22px;
     }
 
-    .card p,
-    .card li{
+    .card p{
       color:var(--muted);
-    }
-
-    ul{
-      margin:0;
-      padding-left:20px;
     }
 
     .apps{
@@ -238,7 +232,9 @@
       color:#fff;
     }
 
-    .apps .section-head .sub{color:var(--green2)}
+    .apps .section-head .sub{
+      color:var(--green2);
+    }
 
     .app-grid{
       display:grid;
@@ -278,6 +274,12 @@
       margin:12px 0 22px;
     }
 
+    .app-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
     .app-link{
       display:inline-flex;
       padding:10px 15px;
@@ -286,6 +288,27 @@
       border-radius:999px;
       font-size:13px;
       font-weight:900;
+    }
+
+    .app-open{
+      display:inline-flex;
+      padding:10px 15px;
+      background:linear-gradient(135deg,var(--green),var(--green2));
+      color:#fff;
+      border-radius:999px;
+      font-size:13px;
+      font-weight:900;
+    }
+
+    .app-disabled{
+      display:inline-flex;
+      padding:10px 15px;
+      background:#3a4540;
+      color:#c8d3ce;
+      border-radius:999px;
+      font-size:13px;
+      font-weight:900;
+      cursor:not-allowed;
     }
 
     .flyer{
@@ -362,18 +385,6 @@
       margin-top:25px;
     }
 
-    .line-id{
-      margin-top:18px;
-      font-size:16px;
-      color:var(--muted);
-    }
-
-    .line-id strong{
-      color:var(--text);
-      font-size:20px;
-      letter-spacing:.04em;
-    }
-
     footer{
       padding:30px 0;
       text-align:center;
@@ -428,17 +439,17 @@
     <div class="wrap hero-inner">
 
       <div>
-        <div class="eyebrow">PORTFOLIO / WEB APPLICATION</div>
+        <div class="eyebrow">Webサイト / Webアプリ制作</div>
 
         <h1>108co.</h1>
 
         <p class="catch">
-          ホームページ制作<br>
+          Webサイト制作<br>
           業務改善Webアプリ
         </p>
 
         <p class="lead">
-          中小企業・個人事業主向けに、名刺代わりのホームページ制作、
+          中小企業・個人事業主向けに、名刺代わりのWebサイト制作、
           勤怠管理・オーダー管理・配車管理などの業務改善Webアプリ制作を行っています。
         </p>
 
@@ -459,8 +470,8 @@
         <div class="chips">
           <span class="chip">品質管理</span>
           <span class="chip">設備保守</span>
-          <span class="chip">第二種電気工事士</span>
-          <span class="chip">運行管理者（貨物）</span>
+          <span class="chip">工場運営</span>
+          <span class="chip">運行管理</span>
           <span class="chip">Webアプリ制作</span>
         </div>
       </div>
@@ -472,8 +483,8 @@
     <div class="wrap">
 
       <div class="section-head">
-        <div class="sub">ABOUT</div>
-        <h2>自己紹介</h2>
+        <div class="sub">自己紹介</div>
+        <h2>108co.について</h2>
       </div>
 
       <div class="about-grid">
@@ -489,20 +500,17 @@
 
           <p>
             現場で感じた課題をもとに、
-            ホームページ制作および業務改善Webアプリ制作を行っています。
+            Webサイト制作および業務改善Webアプリ制作を行っています。
           </p>
         </div>
 
         <div class="card">
-          <h3>保有資格</h3>
+          <h3>制作方針</h3>
 
-          <ul>
-            <li>コンクリート主任技士</li>
-            <li>コンクリート診断士</li>
-            <li>第二種電気工事士</li>
-            <li>運行管理者（貨物）</li>
-            <li>その他資格あり</li>
-          </ul>
+          <p>
+            見た目だけでなく、実際の業務で使いやすいことを重視しています。
+            小規模事業者や中小企業が導入しやすい、シンプルで分かりやすい仕組みを目指します。
+          </p>
         </div>
 
       </div>
@@ -514,17 +522,17 @@
     <div class="wrap">
 
       <div class="section-head">
-        <div class="sub">SERVICE</div>
+        <div class="sub">サービス</div>
         <h2>対応サービス</h2>
       </div>
 
       <div class="service-grid">
 
         <div class="card">
-          <h3>ホームページ制作</h3>
+          <h3>Webサイト制作</h3>
 
           <p>
-            名刺代わりのホームページ、会社紹介サイト、サービス紹介ページなど、
+            名刺代わりのWebサイト、会社紹介サイト、サービス紹介ページなど、
             小規模事業者向けのシンプルで見やすいWebサイトを制作します。
           </p>
         </div>
@@ -547,8 +555,8 @@
     <div class="wrap">
 
       <div class="section-head">
-        <div class="sub">WORKS</div>
-        <h2>制作アプリ</h2>
+        <div class="sub">制作アプリ</div>
+        <h2>制作アプリ一覧</h2>
       </div>
 
       <div class="app-grid">
@@ -559,7 +567,11 @@
           <p>
             出退勤、GPS打刻、管理者確認、CSV集計に対応した勤怠管理Webアプリ。
           </p>
-          <a class="app-link" href="#smart-kintai">紹介を見る</a>
+
+          <div class="app-actions">
+            <a class="app-link" href="#smart-kintai">紹介を見る</a>
+            <a class="app-open" href="https://miki-crypto-star.github.io/smart-kintai/admin.html?company=demo" target="_blank">アプリを開く</a>
+          </div>
         </div>
 
         <div class="app-card">
@@ -568,7 +580,11 @@
           <p>
             テイクアウト・イートイン対応の飲食店向けオーダー管理アプリ。
           </p>
-          <a class="app-link" href="#smart-order">紹介を見る</a>
+
+          <div class="app-actions">
+            <a class="app-link" href="#smart-order">紹介を見る</a>
+            <a class="app-open" href="https://miki-crypto-star.github.io/SmartOrder/" target="_blank">アプリを開く</a>
+          </div>
         </div>
 
         <div class="app-card">
@@ -577,16 +593,24 @@
           <p>
             注文共有・提供確認・お会計集計の短縮を手助けするオーダー支援アプリ。
           </p>
-          <a class="app-link" href="#order-support">紹介を見る</a>
+
+          <div class="app-actions">
+            <a class="app-link" href="#order-support">紹介を見る</a>
+            <a class="app-open" href="https://bpakishizawa-sketch.github.io/izakaya-relay/login" target="_blank">アプリを開く</a>
+          </div>
         </div>
 
         <div class="app-card">
           <div class="app-no">04</div>
           <h3>Dispatch GPS</h3>
           <p>
-            車両位置や配送状況の確認をサポートする配車管理アプリ。
+            開発中のGPS配車管理システム。車両位置や配送状況の確認をサポートします。
           </p>
-          <a class="app-link" href="#dispatch-gps">紹介を見る</a>
+
+          <div class="app-actions">
+            <a class="app-link" href="#dispatch-gps">紹介を見る</a>
+            <span class="app-disabled">開発中</span>
+          </div>
         </div>
 
       </div>
@@ -654,7 +678,7 @@
       <div id="dispatch-gps" class="flyer-card">
         <div>
           <h2 class="flyer-title">Dispatch GPS</h2>
-          <p class="flyer-copy">配送・運送向け配車管理アプリ</p>
+          <p class="flyer-copy">開発中のGPS配車管理システム</p>
           <p class="flyer-text">
             車両位置や配送状況を確認し、配車管理や現場連絡をサポートする、
             運送・配送業向けの業務改善アプリです。
@@ -676,14 +700,14 @@
     <div class="wrap">
 
       <div class="section-head">
-        <div class="sub">CONTACT</div>
-        <h2>お問い合わせ</h2>
+        <div class="sub">お問い合わせ</div>
+        <h2>LINEでお問い合わせ</h2>
       </div>
 
       <div class="contact-box">
 
         <p class="contact-lead">
-          ホームページ制作・業務改善Webアプリ制作のご相談は、
+          Webサイト制作・業務改善Webアプリ制作のご相談は、
           LINEよりお気軽にお問い合わせください。
         </p>
 
@@ -706,10 +730,6 @@
             LINEで問い合わせる
           </a>
         </div>
-
-        <p class="line-id">
-          LINE ID：<strong>miki46p9</strong>
-        </p>
 
       </div>
 
